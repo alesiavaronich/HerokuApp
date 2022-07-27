@@ -9,19 +9,12 @@ import java.util.List;
 
 public class SortableDataTablesFactoryPage extends BaseFactoryPage{
 
-    @FindBy(xpath = "//a[text()='Sortable Data Tables']")
-    private WebElement sortableDataTablesLink;
-
     @FindBy(xpath = "//*[@id='table1']/tbody/tr[1]/td[3]")
     private WebElement email;
 
     //Constructor
     public SortableDataTablesFactoryPage(WebDriver driver) {
         super(driver);
-    }
-
-    public void clickSortableDataTablesLink() {
-        sortableDataTablesLink.click();
     }
 
     public int getRowCount() {

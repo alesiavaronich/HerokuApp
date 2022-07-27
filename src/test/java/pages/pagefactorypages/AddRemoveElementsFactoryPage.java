@@ -9,9 +9,6 @@ import java.util.List;
 
 public class AddRemoveElementsFactoryPage extends BaseFactoryPage{
 
-    @FindBy(xpath = "//a[text()='Add/Remove Elements']")
-    private WebElement addRemoveElementsLink;
-
     @FindBy(xpath = "//button[text()='Add Element']")
     private WebElement addElementButton;
 
@@ -21,10 +18,6 @@ public class AddRemoveElementsFactoryPage extends BaseFactoryPage{
     //Constructor
     public AddRemoveElementsFactoryPage(WebDriver driver) {
         super(driver);
-    }
-
-    public void clickAddRemoveElementsLink() {
-        addRemoveElementsLink.click();
     }
 
     public void clickAddElementButton(int count) {

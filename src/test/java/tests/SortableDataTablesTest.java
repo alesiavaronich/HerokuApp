@@ -1,5 +1,6 @@
 package tests;
 
+import constants.Urls;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.pagefactorypages.SortableDataTablesFactoryPage;
@@ -8,8 +9,7 @@ public class SortableDataTablesTest extends BaseTest{
 
     @BeforeMethod
     public void openSortableTablesUrl() {
-        SortableDataTablesFactoryPage sortableDataTablesFactoryPage = new SortableDataTablesFactoryPage(driver);
-        sortableDataTablesFactoryPage.clickSortableDataTablesLink();
+        driver.get(Urls.HEROKUAPP_SORTABLE_DATATABLES_URL);
     }
 
     @Test
@@ -19,6 +19,8 @@ public class SortableDataTablesTest extends BaseTest{
         int rawNum = sortableDataTablesFactoryPage.getRowNumberForEmail("fbach@yahoo.com");
         //use the variable to extract the remaining data from the row where that email was found
         sortableDataTablesFactoryPage.printRawContent(rawNum);
+
+        //как привинтить сюда ассерт?
     }
 
 

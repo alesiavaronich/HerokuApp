@@ -1,5 +1,6 @@
 package tests;
 
+import constants.Urls;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -9,8 +10,7 @@ public class AddRemoveElementsTest extends BaseTest{
 
     @BeforeMethod
     public void openAddRemoveElementsUrl() {
-        AddRemoveElementsFactoryPage addRemoveElementsFactoryPage = new AddRemoveElementsFactoryPage(driver);
-        addRemoveElementsFactoryPage.clickAddRemoveElementsLink();
+        driver.get(Urls.HEROKUAPP_ADD_REMOVE_ELEMENTS_URL);
     }
 
     @Test(priority = 1)
