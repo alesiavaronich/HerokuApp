@@ -24,6 +24,6 @@ public class AddRemoveElementsTest extends BaseTest{
         addRemoveElementsFactoryPage.clickDeleteElementButton();
         int finalCount = addRemoveElementsFactoryPage.countDeleteElements();
 
-        Assert.assertTrue(finalCount == 1);
+        Assert.assertEquals(finalCount, 1);
     }
 }

@@ -7,10 +7,10 @@ import org.openqa.selenium.support.FindBy;
 public class NotificationMessageFactoryPage extends BaseFactoryPage{
 
     @FindBy(xpath = "//a[text()='Click here']")
-    public WebElement clickHereLink;
+    private WebElement clickHereLink;
 
     @FindBy(xpath = "//div[@id='flash']")
-    public WebElement notificationMessage;
+    private WebElement notificationMessage;
 
     //Constructor
     public NotificationMessageFactoryPage(WebDriver driver) {
@@ -21,7 +21,7 @@ public class NotificationMessageFactoryPage extends BaseFactoryPage{
         clickHereLink.click();
     }
 
-    public String getMessageText() {
+    public String getTextFromMessage() {
         return notificationMessage.getText().trim();
     }
 }

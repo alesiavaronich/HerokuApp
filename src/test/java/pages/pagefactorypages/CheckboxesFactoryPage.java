@@ -7,29 +7,30 @@ import org.openqa.selenium.support.FindBy;
 public class CheckboxesFactoryPage extends BaseFactoryPage {
 
     @FindBy(xpath = "//input[@type='checkbox'][1]")
-    public WebElement checkboxOne;
+    private WebElement checkboxOne;
 
     @FindBy(xpath = "//input[@type='checkbox'][2]")
-    public WebElement checkboxTwo;
+    private WebElement checkboxTwo;
 
     public CheckboxesFactoryPage(WebDriver driver) {
         super(driver);
     }
 
-    public void selectCheckboxOne() {
+    public boolean isCheckboxOneChecked() {
+        return checkboxOne.isSelected();
+    }
+
+    public boolean isCheckboxTwoChecked() {
+        return checkboxTwo.isSelected();
+    }
+
+    public void clickCheckboxOne() {
         checkboxOne.click();
     }
 
-    public void deselectCheckboxOne() {
-        checkboxOne.click();
-    }
-
-    public void selectCheckboxTwo() {
+    public void clickCheckboxTwo() {
         checkboxTwo.click();
     }
 
-    public void deselectCheckboxTwo() {
-        checkboxTwo.click();
-    }
 
 }

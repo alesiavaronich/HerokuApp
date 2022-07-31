@@ -14,25 +14,33 @@ public class CheckboxesTest extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void selectCheckboxOne() {
+    public void isCheckboxOneUnchecked() {
         CheckboxesFactoryPage checkboxesFactoryPage = new CheckboxesFactoryPage(driver);
-        boolean isCheckSelectedBefore = checkboxesFactoryPage.checkboxOne.isSelected(); //false
-        if(!isCheckSelectedBefore)
-            checkboxesFactoryPage.selectCheckboxOne();
-        boolean isCheckSelectedAfter = checkboxesFactoryPage.checkboxOne.isSelected(); //true
-
-        Assert.assertTrue(isCheckSelectedAfter, "Checkbox is not selected after performing click action.");
+        boolean isCheckboxChecked = checkboxesFactoryPage.isCheckboxOneChecked();
+        Assert.assertFalse(isCheckboxChecked);
     }
 
     @Test(priority = 2)
-    public void deselectCheckboxTwo() {
+    public void isCheckboxOneChecked() {
         CheckboxesFactoryPage checkboxesFactoryPage = new CheckboxesFactoryPage(driver);
-        boolean isCheckSelectedBefore = checkboxesFactoryPage.checkboxTwo.isSelected(); //true
-        if(isCheckSelectedBefore)
-            checkboxesFactoryPage.deselectCheckboxTwo();
-        boolean isCheckSelectedAfter = checkboxesFactoryPage.checkboxTwo.isSelected();
+        checkboxesFactoryPage.clickCheckboxOne();
+        boolean isCheckboxOneChecked = checkboxesFactoryPage.isCheckboxOneChecked();
+        Assert.assertTrue(isCheckboxOneChecked);
+    }
 
-        Assert.assertFalse(isCheckSelectedAfter, "Checkbox is selected after performing click action.");
+    @Test(priority = 3)
+    public void isCheckboxTwoChecked() {
+        CheckboxesFactoryPage checkboxesFactoryPage = new CheckboxesFactoryPage(driver) ;
+        boolean isCheckboxChecked = checkboxesFactoryPage.isCheckboxTwoChecked();
+        Assert.assertTrue(isCheckboxChecked, "Error. Checkbox 2 is unchecked.");
+    }
+
+    @Test(priority = 4)
+    public void isCheckboxTwoUnchecked() {
+        CheckboxesFactoryPage checkboxesFactoryPage = new CheckboxesFactoryPage(driver);
+        checkboxesFactoryPage.clickCheckboxTwo();
+        boolean isCheckboxTwoChecked = checkboxesFactoryPage.isCheckboxTwoChecked();
+        Assert.assertFalse(isCheckboxTwoChecked);
     }
 
 

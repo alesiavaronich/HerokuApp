@@ -9,17 +9,15 @@ import pages.pagefactorypages.TyposFactoryPage;
 public class TyposTest extends BaseTest{
 
     @BeforeMethod
-    public void openInputsUrl() {
+    public void openTyposUrl() {
         driver.get(Urls.HEROKUAPP_TYPOS_URL);
     }
 
     @Test
     public void readTextWithTypo() {
+        String expected = "Sometimes you'll see a typo, other times you won't.";
         TyposFactoryPage typosFactoryPage = new TyposFactoryPage(driver);
         String actual = typosFactoryPage.getTextFromParagraph();
-        String expected = "Sometimes you'll see a typo, other times you won't.";
-        Assert.assertTrue(actual.equals(expected), "There is a typo in the text.");
-
-        //что делать с неустойчивыми тестами? результат то правильный, то неправильный
+        Assert.assertEquals(actual, expected, "There is a typo in the text.");
     }
 }

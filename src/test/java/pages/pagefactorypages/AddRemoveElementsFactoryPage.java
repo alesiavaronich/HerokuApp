@@ -27,12 +27,7 @@ public class AddRemoveElementsFactoryPage extends BaseFactoryPage{
     }
 
     public void clickDeleteElementButton() {
-        List<WebElement> deleteElements = driver.findElements(By.xpath("//button[@class='added-manually']"));
-        int deleteElementsCount = deleteElements.size();
-        if(deleteElementsCount > 0) {
             deleteButton.click();
-            System.out.println("Deleted one element.");
-        }
     }
 
     public int countDeleteElements() {

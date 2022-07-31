@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class TyposFactoryPage extends BaseFactoryPage{
 
     @FindBy(xpath = "//div[@class='example']/p[2]")
-    public WebElement typoText;
+    private WebElement textWithTypo;
 
     //Constructor
     public TyposFactoryPage(WebDriver driver) {
@@ -15,7 +15,7 @@ public class TyposFactoryPage extends BaseFactoryPage{
     }
 
     public String getTextFromParagraph() {
-        return typoText.getText();
+        return textWithTypo.getText();
     }
 }
 

@@ -8,11 +8,21 @@ import org.openqa.selenium.support.FindBy;
 public class InputsFactoryPage extends BaseFactoryPage {
 
     @FindBy(xpath = "//input[@type='number']")
-    public WebElement inputField;
+    private WebElement inputField;
 
     //Constructor
     public InputsFactoryPage(WebDriver driver) {
         super(driver);
+    }
+
+    public void fillNumberInput(int num) {
+        String initialNumberSetByUser = Integer.toString(num);
+        inputField.sendKeys(initialNumberSetByUser);
+    }
+
+    public int getTextFromInputField() {
+        String textFromInputField = inputField.getAttribute("value");
+        return Integer.parseInt(textFromInputField);
     }
 
     public void increaseNumbersByArrowKeys(int increaseByNum) {
