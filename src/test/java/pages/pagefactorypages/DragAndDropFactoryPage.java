@@ -29,7 +29,12 @@ public class DragAndDropFactoryPage extends BaseFactoryPage{
 
     public void dragAndDrop() {
         Actions actions = new Actions(driver);
-        actions.clickAndHold(source).moveToElement(target).release().build().perform();
+        actions
+                .clickAndHold(source)
+                .moveToElement(target)
+                .release()
+                .build()
+                .perform();
     }
 
     public String getDroppedText() {
